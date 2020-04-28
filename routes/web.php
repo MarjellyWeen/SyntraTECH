@@ -26,7 +26,7 @@ Route::get('/about', function () {
 // routes\web.php
 Route::get('/users/{id}', 'UsersController@show');
 Route::get('courses','CourseController@show');
-Route::get('details/{id}','DetailController@show');
+Route::get('details/{id}','CourseController@detail');
 // Bij een get request spreken we de methode show aan in de UsersController en we geven de id mee
 
 Route::get('students','StudentController@index');
@@ -36,3 +36,9 @@ Route::post('students/store','StudentController@store');
 Route::get('students/{student}/edit','StudentController@edit');
 Route::put('students/{student}','StudentController@update');
 
+Route::get('contact','ContactController@create');
+Route::post('contact/store','ContactController@store');
+// Update - eerst form inladen en data ophalen
+Route::get('contact/{contact}','ContactController@edit');
+// een update uitvoeren
+Route::put('contact/{contact}','ContactController@update');

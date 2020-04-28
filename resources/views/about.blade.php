@@ -1,4 +1,5 @@
 @extends('style')
+
 @section('about')
 <section id="content" class="content">
     <div class="container">

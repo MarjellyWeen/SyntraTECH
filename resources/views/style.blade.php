@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Vesperr Bootstrap Template - Index</title>
+  <title>SyntraTECH - Tech opleidingen voor jan en alleman</title>
   <meta content="" name="descriptison">
   <meta content="" name="keywords">
 
@@ -56,7 +56,7 @@
           <li><a href="#services">Opleidingen</a></li>
           <li><a href="#portfolio">Jobs</a></li>
           <li><a href="#pricing">Docenten</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li class="{{ Request::path() === 'contact' ? 'active' : '' }}"><a href="/contact">Contact</a></li>
           <li class="get-started"><a href="#about">Schrijf u in</a></li>
 
 
@@ -120,7 +120,6 @@
   <script src="/assets/vendor/jquery/jquery.min.js"></script>
   <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="/assets/vendor/jquery.easing/jquery.easing.min.js"></script>
-  <script src="/assets/vendor/php-email-form/validate.js"></script>
   <script src="/assets/vendor/waypoints/jquery.waypoints.min.js"></script>
   <script src="/assets/vendor/counterup/counterup.min.js"></script>
   <script src="/assets/vendor/owl.carousel/owl.carousel.min.js"></script>
