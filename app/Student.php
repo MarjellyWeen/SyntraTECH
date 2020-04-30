@@ -8,4 +8,8 @@ class Student extends Model
 {
     // protected $fillable = ['name', 'email','phone','age'];
     protected $guarded = [];
+
+    public function course () {
+        return $this->belongsToMany(Course::class);
+    }
 }

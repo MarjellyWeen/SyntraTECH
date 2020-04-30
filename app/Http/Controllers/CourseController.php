@@ -11,7 +11,9 @@ class CourseController extends Controller
 
         $courses = Course::all();
         $topcourse = Course::latest()->first();
-        return view ('courses', ['courses' => $courses, 'topcourse' => $topcourse]);
+        $coursepivot = Course::withCount('student')->get();
+        //dd ($coursepivot);
+        return view ('courses', ['coursepivot' => $coursepivot, 'topcourse' => $topcourse]);
         // Ook komt het zeer vaak voor, dat we 2 datasets meegeven aan onze view
         // Dit doen we door de array uit te breiden...
     }

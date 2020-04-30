@@ -36,7 +36,7 @@
             <div class="col-md-6 d-md-flex align-items-md-stretch">
               <div class="count-box">
                 <i class="icofont-simple-smile"></i>
-                <span data-toggle="counter-up">{{$courses->count()}}</span>
+                <span data-toggle="counter-up">{{$coursepivot->count()}}</span>
                 <p><strong>Excellent courses</strong> consequuntur voluptas nostrum aliquid ipsam architecto ut.</p>
               </div>
             </div>
@@ -76,11 +76,12 @@
 <section id="services" class="services">
   <div class="container">
        <div class="row">
-      @foreach ($courses as $course)
+      @foreach ($coursepivot as $course)
       <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
           <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
             <div class="icon"><i class="bx bx-world"></i></div>
             <h4 class="title"><a href="/details/{{ $course->id}}">{{ $course->name}} (€{{ $course->price}})</a></h4>
+            <h6 style="color:#3498db">Inschrijvingen: {{$course->student_count}}/20</h6>
             <p class="description">{{ $course->description}}</p>
           </div>
         </div>

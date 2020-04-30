@@ -42,3 +42,8 @@ Route::post('contact/store','ContactController@store');
 Route::get('contact/{contact}','ContactController@edit');
 // een update uitvoeren
 Route::put('contact/{contact}','ContactController@update');
+
+Route::get('courset2', function() {
+$result = \App\Location::find(1)->course;
+dd($result);
+});
