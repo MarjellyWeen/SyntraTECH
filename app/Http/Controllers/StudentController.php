@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Student;
+use App\Course;
+
 use Illuminate\Http\Request;
 
 class StudentController extends Controller
@@ -25,7 +27,9 @@ class StudentController extends Controller
      */
     public function create()
     {
-        return view('student.create');
+        $courses = Course::all();
+        //dd($courses);
+        return view('student.create', compact('courses'));
     }
 
     /**
@@ -36,15 +40,22 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
+        //dd(request('email'));
+        //dd(request('course'));
+        $checkmail = request('email');
+        if(Student::where('email', $checkmail)->exists()) {
+            session()->put('checkmail','U bent reeds ingeschreven als studen bij SyntraTECH');
+            return redirect('students/create');
+        }
         $validation = request()->validate([
             'name' => 'required',
             'email' => 'required',
             'phone' => 'required',
             'age' => 'required'
         ]);
-       // dd($validation);
+       //dd($validation);
 
-        Student::Create($validation);
+        Student::Create($validation)->course()->attach(request('course'));
         return redirect('students');
     }
 

@@ -12,6 +12,10 @@ class Course extends Model
     }
 
     public function student () {
-        return $this->belongsToMany(Student::class);
+        return $this->belongsToMany(Student::class)->withTimestamps();
     }
+    public function getNameAttribute($value)
+        {
+        return ucfirst($value);
+        }
 }

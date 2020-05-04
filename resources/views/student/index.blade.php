@@ -3,9 +3,9 @@
 <section id="content" class="content">
     <div class="container">
         <div class="row">
-                <h2>Students INDEX</h2>
-                <div class="recap">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, </div>
-                               <div>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+                <h2>Bedankt voor uw inschrijving</h2>
+                <div class="recap">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever sin </div>
+                               <div>Wij nemen spoedig contact met u op om uw inschrijving te bevestigen... Dank nogmaals voor het vertrouwen...</div>
         </div>
     </div>
 </section>

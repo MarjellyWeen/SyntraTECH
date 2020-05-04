@@ -3,38 +3,54 @@
 <section id="content" class="content">
     <div class="container">
         <div class="row">
-                <h2>Student toevoegen</h2>
-                <div class="recap">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, </div>
+         @if(Session::has('checkmail'))
+            <div class="alert alert-danger" role="alert"> 
+              {{ Session::get('checkmail') }}
+            </div>
+            @else
+                <h2>Registreer en schrijf je in voor een course</h2>
+                @endif
+                @php Session::forget('checkmail') @endphp
+                <div class="recap">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</div>
 
                 <div>
 
                     <form method="post" action="/students/store">
                         @csrf
                         <div class="form-group">
-                            <label>Name</label>
+                            <label>Volledige naam</label>
                             <input type="text" class="form-control" name="name" value="{{old('name')}}">
                             <span class="small text-danger">{{ $errors->first('name') }}</span>
                           </div>
 
                           <div class="form-group">
-                            <label>Email address</label>
+                            <label>Email adres</label>
                             <input type="email" class="form-control" name="email" value="{{ old('email') }}">
                             <span class="small text-danger">{{$errors->first('email')}}</span>
                           </div>
 
                         <div class="form-group">
-                          <label>Phone</label>
+                          <label>Telefoon</label>
                           <input type="text" class="form-control" name="phone" value="{{ old('phone')}}">
                           <span class="small text-danger">{{ $errors->first('phone')}}</span>
                         </div>
 
                         <div class="form-group">
-                            <label>Age</label>
-                            <input type="number" class="form-control" name="age" value="{{ old('age')}}">
+                            <label>Leeftijd</label>
+                            <input type="number" class="form-control" name="age" value="{{old('age')}}">
                             <span class="small text-danger">{{ $errors->first('age')}}</span>
                         </div>
 
-                        <button type="submit" class="btn btn-primary mb-2">Verzenden</button>
+                        <div class="form-group">
+                          <label for="exampleFormControlSelect1">Beschikbare courses</label>
+                          <select multiple class="form-control" id="exampleFormControlSelect1" name="course[]">
+                            @foreach($courses as $course)
+                            <option value="{{ $course->id }}">{{ $course->name}} - {{$course->price}} EUR</option>
+                            @endforeach
+                          </select>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary mb-2">Ja, ik wil deelnemen</button>
                     </form>
 
 
