@@ -81,7 +81,8 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel Syntra
+                    @auth Laravel Syntra @endauth
+                    @guest Not signed in @endguest
                 </div>
 
                 <div class="links">

@@ -11,6 +11,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        // $this->call(LocationSeeder::class);
         // $this->call(UserSeeder::class);
+        // $this->call(CourseSeeder::class);
+        // Hier kan ik verschillende seeders laten lopen met het basis seed comando
+        // php artisan db:seed 
     }
 }

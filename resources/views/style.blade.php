@@ -55,7 +55,7 @@
           <li class="{{ Request::path() === 'about' ? 'active' : '' }}"><a href="/about">Over SyntraTECH</a></li>
           <li><a href="#services">Opleidingen</a></li>
           <li><a href="#portfolio">Jobs</a></li>
-          <li><a href="#pricing">Docenten</a></li>
+          <li class="{{ Request::path() === 'docent' ? 'active' : '' }}"><a href="/docent">Docenten</a></li>
           <li class="{{ Request::path() === 'contact' ? 'active' : '' }}"><a href="/contact">Contact</a></li>
           <li class="get-started"><a href="/students/create">Schrijf u in</a></li>
 

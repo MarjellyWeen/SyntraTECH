@@ -47,3 +47,8 @@ Route::get('courset2', function() {
 $result = \App\Location::find(1)->course;
 dd($result);
 });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
+
+Route::get('/docent','DocentController@index');
