@@ -51,4 +51,4 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 
-Route::get('/docent','DocentController@index');
+Route::get('/docent','DocentController@index')->middleware('auth');;
