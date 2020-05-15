@@ -43,3 +43,11 @@ span.slecht {
     font-weight: bold;
     color: white;
 }
+span.pers {
+    display: block;
+    background-color: #3498db;
+    color: white;
+    padding: 13px;
+    margin-bottom: 16px;
+    border-radius: 3px;
+}

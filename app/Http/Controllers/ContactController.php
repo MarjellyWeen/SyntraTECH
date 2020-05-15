@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Contact;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class ContactController extends Controller
 {
@@ -38,11 +39,17 @@ class ContactController extends Controller
         //return request();
        $validate = request()->validate([
             'name' => 'required',
-            'email' => 'required',
+            'email' => 'required|email',
             'phone' => 'required',
             'question' => 'required'
         ]);
         Contact::Create($validate);
+
+        Mail::raw('Mailcontent: '.request('question'), function($message){
+            $message->to(request('email'))
+            ->subject('Vraag van: '.request('naam'));
+        });
+
         return view('contact.thanks');
     }
 
