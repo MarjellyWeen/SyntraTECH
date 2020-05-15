@@ -42,6 +42,7 @@ class StudentController extends Controller
     {
         //dd(request('email'));
         //dd(request('course'));
+        dd(request());
         $checkmail = request('email');
         if(Student::where('email', $checkmail)->exists()) {
             session()->put('checkmail','U bent reeds ingeschreven als studen bij SyntraTECH');
@@ -54,7 +55,7 @@ class StudentController extends Controller
             'age' => 'required'
         ]);
        //dd($validation);
-
+        
         Student::Create($validation)->course()->attach(request('course'));
         return redirect('students');
     }

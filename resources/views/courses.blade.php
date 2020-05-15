@@ -44,16 +44,16 @@
             <div class="col-md-6 d-md-flex align-items-md-stretch">
               <div class="count-box">
                 <i class="icofont-document-folder"></i>
-                <span data-toggle="counter-up">85</span>
-                <p><strong>Projects</strong> adipisci atque cum quia aspernatur totam laudantium et quia dere tan</p>
+                <span data-toggle="counter-up">{{ DB::table('users') -> count() }}</span>
+                <p><strong>Docenten</strong> adipisci atque cum quia aspernatur totam laudantium et quia dere tan</p>
               </div>
             </div>
 
             <div class="col-md-6 d-md-flex align-items-md-stretch">
               <div class="count-box">
                 <i class="icofont-clock-time"></i>
-                <span data-toggle="counter-up">12</span>
-                <p><strong>Years of experience</strong> aut commodi quaerat modi aliquam nam ducimus aut voluptate non vel</p>
+                <span data-toggle="counter-up">{{ DB::table('students') -> count() }}</span>
+                <p><strong>Cursisten</strong> aut commodi quaerat modi aliquam nam ducimus aut voluptate non vel</p>
               </div>
             </div>
 

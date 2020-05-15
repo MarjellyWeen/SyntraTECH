@@ -45,10 +45,12 @@ class ContactController extends Controller
         ]);
         Contact::Create($validate);
 
-        Mail::raw('Mailcontent: '.request('question'), function($message){
-            $message->to(request('email'))
-            ->subject('Vraag van: '.request('naam'));
+        Mail::send('mails.contact', $validate, function ($message) {
+            $message->to(request('email'), request('name'));
+            $message->bcc('info@syntratech.be', 'SyntraTechAdmin');
+            $message->subject('Vraag van: '. request('name'));
         });
+
 
         return view('contact.thanks');
     }
