@@ -8,8 +8,9 @@
                 <div class="recap">Wij helpen u graag verder! Laat ons uw vraag geworden middels het contactformulier...</div>
 
                 <div>
-                    <form method="post" action="/contact/store">
+                    <form method="post" action="/contact/store" enctype="multipart/form-data">
                         @csrf
+                
                         <div class="form-group">
                           <label for="exampleInputEmail1">Naam</label>
                           <input type="name" class="form-control" name="name" 
@@ -29,6 +30,13 @@
                         <input type="name" class="form-control" name="phone"
                         value="{{old('phone')}}">
                         <span class="small text-danger">{{ $errors->first('phone') }}</span>
+                     </div>
+
+                     <div class="form-group">
+                        <label for="exampleInputEmail1">Bijlage</label>
+                        <input type="file" class="form-control" name="attachment"
+                        value="{{old('attachment')}}">
+                        <span class="small text-danger">{{ $errors->first('attachment') }}</span>
                      </div>
 
                      <div class="form-group">

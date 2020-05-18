@@ -15,7 +15,7 @@
 
                 <div>
 
-                    <form method="post" action="/students/store">
+                    <form method="post" action="/students/store" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
                             <label>Volledige naam</label>
@@ -40,6 +40,13 @@
                             <input type="number" class="form-control" name="age" value="{{old('age')}}">
                             <span class="small text-danger">{{ $errors->first('age')}}</span>
                         </div>
+
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">Profielfoto</label>
+                          <input type="file" class="form-control" name="profilepicture"
+                          value="{{old('profilepicture')}}">
+                          <span class="small text-danger">{{ $errors->first('profilepicture') }}</span>
+                       </div>
 
                         <div class="form-group">
                           <label for="exampleFormControlSelect1">Beschikbare courses</label>

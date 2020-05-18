@@ -53,8 +53,19 @@ class StudentController extends Controller
             'name' => 'required',
             'email' => 'required',
             'phone' => 'required',
-            'age' => 'required'
+            'age' => 'required',
+            'profilepicture' =>  'required|max:2048',
         ]);
+        dd($validation);
+
+        $store = [
+            'name' => $request->name,
+            'email' => $request->email,
+            'phone' =>$request->phone,
+            'age' => $request->age,
+            'profilepicture' => $request->file('profilepicture')->getClientOriginalName(),
+            ];
+
 
         // 1. Vind of creeer student en sla hem op in een variabel
         //maakt een nieuwe student aan met de gevalideerde data en assiocieerd de nieuwe student met de opgegeven courses

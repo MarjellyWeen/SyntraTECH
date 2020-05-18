@@ -36,12 +36,14 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
+        dd($request);
         //return request();
        $validate = request()->validate([
             'name' => 'required',
             'email' => 'required|email',
             'phone' => 'required',
-            'question' => 'required'
+            'question' => 'required',
+            'attachment' => 'max:2048',
         ]);
         Contact::Create($validate);
 
